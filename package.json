@@ -1,6 +1,6 @@
 {
   "name": "homebridge-rolling-spider",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Rolling Spider plugin for homebridge: https://github.com/nfarina/homebridge",
   "license": "ISC",
   "keywords": [
