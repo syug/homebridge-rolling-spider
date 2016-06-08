@@ -1,5 +1,6 @@
 var Service, Characteristic;
 var RollingSpider = require("rolling-spider");
+var temporal = require("temporal");
 
 
 module.exports = function(homebridge){
@@ -39,13 +40,18 @@ function RollingSpiderAccessory(log, config) {
 	    self.rs.startPing();
 	    self.rs.flatTrim();
 
-	    // Set flags to true
-	    setTimeout( function() {
-	      self.log("Ready to takeoff:" + self.rs.name);
-	      isConnected = true;
-	    }, 1000);
-    } );
-  } );
+	    // Set connected flag to true
+	    temporal.queue([
+    		{
+    			delay: 1000,
+    			task: function() {
+    				self.log("Ready to takeoff:" + self.rs.name);
+      			isConnected = true;
+    			}
+    		}
+    	])
+    });
+  });
 }
 
 RollingSpiderAccessory.prototype = {
@@ -63,8 +69,8 @@ RollingSpiderAccessory.prototype = {
 			}
 			callback();
 		} else {
-			// callback("error");
-			callback();
+			// callback();
+			callback("error");
 		}
 	},
 
