@@ -1,0 +1,20 @@
+{
+    "bridge": {
+        "name": "Homebridge",
+        "username": "CC:22:3D:E3:CE:30",
+        "port": 51826,
+        "pin": "031-45-154"
+    },
+    
+    "description": "This is an example configuration file with RollingSpider, that handle Rolling Spider as an accessory.",
+
+    "platforms": [],
+
+    "accessories": [
+        {
+            "accessory": "RollingSpider",
+            "name": "drone",
+            "uuid": "xxxxxxxxxx This is an ptional value. If you will not use it, do not forget to delete this line. xxxxxxxxxxx"
+        }
+    ]
+}
