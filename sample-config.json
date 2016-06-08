@@ -13,8 +13,8 @@
     "accessories": [
         {
             "accessory": "RollingSpider",
-            "name": "drone",
-            "uuid": "xxxxxxxxxx This is an ptional value. If you will not use it, do not forget to delete this line. xxxxxxxxxxx"
+            "name": "rolling spider",
+            "uuid": ""
         }
     ]
 }
